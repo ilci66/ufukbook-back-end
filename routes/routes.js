@@ -13,7 +13,7 @@ router.post('/register', (req, res) => {
   const { username, password, password2, email } = req.body;
 
   if(isEmpty(username) || isEmpty(password) || isEmpty(password2) || isEmpty(email)){
-    return res.json({ error: "Missing required fields!"})
+    return res.status(400).json({ error: "Missing required fields!"})
   }
   if(password !== password2){
     return res.status(400).json({error: "Passwords need to be identical"})
@@ -45,7 +45,21 @@ router.post('/register', (req, res) => {
 
 //now the tricky part, 
 router.post('/login', (req, res) => {
-
+  const { username, password } = req.body;
+  User.findOne({ username: username }, (err, data) => {
+    if(err){return res.status(400).json({error: err})}
+    else if(!data){
+      return res.json({error: "Unknown user name"})
+    } 
+    else{
+      bcrypt.compare(password, data.password)
+        .then(result => {
+          if(result){return res.status(200).json(data)}
+          else{return res.status(400).json({error: "Wrong password"})}
+        })
+        .catch(err => console.log(err))
+    }
+  })
 })
 router.get('posts', (req, res) => {})
 
