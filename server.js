@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 
 app.use(
   cors({
+    origin:"https://ufukbook.netlify.app/",
     credentials: true,
   })
 );
