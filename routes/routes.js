@@ -9,6 +9,9 @@ const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/user.js');
 const Post = require('../models/post.js');
 
+router.get('/', (req, res) => {
+  res.send("your app is running")
+})
 router.post('/register', (req, res) => {
 
   const { username, password, password2, email } = req.body;
