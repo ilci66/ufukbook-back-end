@@ -17,7 +17,11 @@ const routes = require('./routes/routes.js')
 app.use(bodyParser.json({limit: '16mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 
-app.use(cors({}));
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 app.use(
   session({
     secret:"secretcode",
