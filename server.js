@@ -30,8 +30,8 @@ app.use(
     //delete this if it doesn't work
     // cookie: { secure: true },
     //this can also be deleted if it doesn't wok
-    duration: 30 * 60 * 1000,
-    activeDuration: 5 * 60 * 1000,
+    // duration: 30 * 60 * 1000,
+    // activeDuration: 5 * 60 * 1000,
   })
 )
 app.use(cookieParser("secretcode"))
