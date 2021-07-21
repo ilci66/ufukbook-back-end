@@ -10,7 +10,7 @@ const User = require('../models/user.js');
 const Post = require('../models/post.js');
 
 router.get('/', (req, res) => {
-  res.send("your app is running")
+  res.status(200).send("your app is running")
 })
 router.post('/register', (req, res) => {
 

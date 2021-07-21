@@ -13,13 +13,12 @@ require('dotenv').config();
 const routes = require('./routes/routes.js')
 
 
-//if it doesn't work uncomment 
 app.use(bodyParser.json({limit: '16mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 
 app.use(
   cors({
-    origin:"https://vigorous-brahmagupta-e44778.netlify.app/",
+    origin:"https://ufukbook-social.herokuapp.com",
     credentials: true,
   })
 );
