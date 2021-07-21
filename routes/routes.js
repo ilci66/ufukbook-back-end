@@ -132,6 +132,10 @@ router.post('/post/create', (req, res) => {
 })
 router.get('/auth', (req, res) => {
   console.log(req.isAuthenticated())
+  
+  //Saw this somewhere 
+  req.session.user = req.user;
+
   res.send(req.user)
   console.log(req.user)
   // if(req.isAuthenticated){
