@@ -135,7 +135,7 @@ router.get('/auth', (req, res) => {
   // res.send(req.user)
   // console.log(req.user)
   if(req.isAuthenticated){
-    res.status(200).json(req.user)
+    res.status(200).json(req.user.username)
   }else{
     res.status(400).json({error: "not authenticated"})
   }
