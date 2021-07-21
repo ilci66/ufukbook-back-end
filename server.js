@@ -27,6 +27,8 @@ app.use(
     secret:"secretcode",
     resave: false,
     saveUninitialized: true,
+    //delete this if it doesn't work
+    cookie: { secure: true },
   })
 )
 app.use(cookieParser("secretcode"))
