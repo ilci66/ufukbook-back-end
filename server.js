@@ -16,9 +16,14 @@ const routes = require('./routes/routes.js')
 app.use(bodyParser.json({limit: '16mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 
+//someone advised using default domain names but again the same problem
+// this is the heroku origin 
+// https://ancient-escarpment-30117.herokuapp.com
+// this is the origin in netlify
+// https://zen-lamarr-a1f107.netlify.app/
 app.use(
   cors({
-    origin:"https://ancient-escarpment-30117.herokuapp.com",
+    origin:"https://zen-lamarr-a1f107.netlify.app",
     credentials: true,
   })
 );
