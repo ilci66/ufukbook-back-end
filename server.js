@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 
 app.use(
   cors({
-    origin:"https://ancient-escarpment-30117.herokuapp.com/",
+    origin:"https://ancient-escarpment-30117.herokuapp.com",
     credentials: true,
   })
 );
