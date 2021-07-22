@@ -133,8 +133,10 @@ router.post('/post/create', (req, res) => {
     }
   })}
 })
-//adding passport middleware in auth
-router.get('/auth', passport.authenticate('local'), (req, res) => {
+//adding passport middleware in auth didn't work either
+// router.get('/auth', passport.authenticate('local'), (req, res) => {
+
+router.get('/auth', (req, res) => {
   console.log(req.isAuthenticated())
   //Saw this somewhere, didn't solve the issue
   // req.session.user = req.user;
