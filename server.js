@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({limit: '16mb', extended: true }))
 // https://ancient-escarpment-30117.herokuapp.com
 // this is the origin in netlify
 // https://zen-lamarr-a1f107.netlify.app/
+//using default names didn't solve the issue either
 app.use(
   cors({
     origin:"https://zen-lamarr-a1f107.netlify.app",
