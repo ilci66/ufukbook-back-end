@@ -62,6 +62,9 @@ router.post('/login', (req, res, next) => {
     else{
       req.logIn(user, (err) => {
         if (err) throw err;
+        //saw this somewhere, gonna give it a go
+        res.locals.user = user;
+        
         res.status(200).send("Successfully Authenticated");
         console.log("backend user>>>>", req.user);}
       );
